@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+            :root {
+    --rick-green: #00b140; /* Verde característico de Rick */
+    --morty-yellow: #f7b800; /* Amarelo de Morty */
+    --portal-blue: #00c2e0; /* Azul do portal */
+    --pink-flesh: #f7a6c3; /* Tom de pele claro, como os aliens */
+    --space-black: #1a1a1a; /* Preto do espaço */
+    --interdimensional-purple: #9b00ff; /* Roxo interdimensional */
+    --meeseeks-blue: #5b93e0; /* Azul do Meeseeks */
+    --plumbus-pink: #d86ccf; /* Rosa do Plumbus */
+}
+
+body {
+    background-color: var(--space-black);
+    color: white;
+}
+
+h1 {
+    color: var(--rick-green);
+}
+
+button {
+    background-color: var(--morty-yellow);
+    color: var(--space-black);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--portal-blue);
+    transition: ease 0.5s;
+    border-radius: 12px;
+    color: white;
+}
+
+footer {
+    background-color: var(--interdimensional-purple);
+    color: var(--meeseeks-blue);
+}
+    </style>
+<body>
+    <label for="">ID PERSONAGEM</label>
+    <input type="text" placeholder="Digite o ID" id="id-personagem">
+
+    <button onclick="carregarPersonagem()">Buscar</button>
+
+    <div id="resultado">
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
