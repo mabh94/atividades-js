@@ -178,3 +178,8 @@ header .logo-cabecalho h1 {
   text-decoration: none;
   cursor: pointer;
 }
+
+img{
+  height: 200px;
+  width: 200px;
+}

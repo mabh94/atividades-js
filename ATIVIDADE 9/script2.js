@@ -16,10 +16,12 @@ function abrirFormulario() {
   };
 
  async function carregarProduto() {
-  const url = 'https://6748c2735801f51535921495.mockapi.io/api/produtos'
+    try{
+        const url = 'https://6748c2735801f51535921495.mockapi.io/api/produtos'
   const resposta = await fetch(url)
   const dadosProdutos = await resposta.json() 
   const main = document.querySelector('.grade-itens')
+  main.innerHTML = ''
   dadosProdutos.forEach(produto => {
   const estruturaHtmlProduto = `
    <section class="cartao-item">
@@ -30,15 +32,43 @@ function abrirFormulario() {
             </section>
             `
     main.innerHTML += estruturaHtmlProduto
-    
-  });
+
+  });  
+    }
+
+
+ catch{
+    console.log('Deu algum erro ao carregar os produtos.')
+ }
+ }
+ async function adicionarProduto(){
+    try{
+
+    }
+    const nomeDigitado = document.querySelector ('#nomeProduto').value
+    const precoDigitado = document.querySelector('#precoProduto').value
+    const urlImagem = document.querySelector('#imagemProduto').value
+    const dadosProdutos = {
+        nome: nomeDigitado,
+        preco: precoDigitado,
+        imagem: urlImagem
+    }
+    const url = 'https://6748c2735801f51535921495.mockapi.io/api/produtos'
+    const resposta = await fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(dadosProdutos)
+    })
+    catch{
+        console.log('Deu algum erro ao cadastrar os produtos.')
+    }
+    await alert('Produto adicionado com sucesso!')
+
+    carregarProduto()
+
+
+
 
  }
 
-
-
-
-
-
-
-  carregarProduto()
+ carregarProduto()
