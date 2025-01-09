@@ -71,4 +71,31 @@ function abrirFormulario() {
 
  }
 
+<<<<<<< HEAD
+=======
+ async function adicionarProduto(){
+    const nomeDigitado = document.querySelector ('#nomeProduto').value
+    const precoDigitado = document.querySelector('#precoProduto').value
+    const urlImagem = document.querySelector('#imagemProduto').value
+    const dadosProdutos = {
+        nome: nomeDigitado,
+        preco: precoDigitado,
+        imagem: urlImagem
+    }
+    const url = 'https://6748c2735801f51535921495.mockapi.io/api/produtos'
+    const resposta = await fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(dadosProdutos)
+    })
+    await alert('Produto adicionado com sucesso!')
+
+    carregarProduto()
+
+
+
+
+ }
+
+>>>>>>> 460d21d754502502ea9c44b21cf50552c0309208
  carregarProduto()
