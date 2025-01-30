@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Ícaro e Gilmar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h1>Spotify</h1>
+      <a href="#">Início</a>
+      <a href="#">Buscar</a>
+      <a href="#">Sua Biblioteca</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="artist-header">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDHZwzuZjcB6b5Uw1Ab7j8cMLssTZ1e2jQoYKFHu-IjImIWzZyTFBmXqCOYaJ3-CkN_ME&usqp=CAU"
+          alt="Icaro e Gilmar"
+        />
+        <div>
+          <h2>Ícaro e Gilmar</h2>
+          <div class="buttons">
+            <a href="#">Play</a>
+            <a href="#">Seguir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Track Button -->
+      <div class="buttons" id="cadastrar">
+        <a href="#" id="openModalBtn">Cadastrar Nova Música</a>
+      </div>
+
+      <!-- Tracks List -->
+      <table class="track-list">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Faixa</th>
+            <th>Streams</th>
+            <th>Duração</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal for adding track -->
+    <div class="modal" id="addTrackModal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h3>Cadastrar Nova Música</h3>
+
+        <input
+          type="text"
+          id="trackName"
+          placeholder="Nome da Música"
+          required
+        />
+        
+        <input type="text" id="trackDuration" placeholder="Duração" required />
+        <input type="number" id="trackStreams" placeholder="Streams" required />
+        <input type="text" id="trackImage" placeholder="Imagem" required />
+        <button onclick="cadastrarMusica()" type="submit">Cadastrar</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
